@@ -1,5 +1,15 @@
 PowerShell.exe -ExecutionPolicy Bypass -File "WordToPDF.ps1"
 
+if exist "*.pdf" (
+	msg "%username%" Your files are converted, they will be in a folder called "PdfsFromWord"
+	
+) else (
+	msg "%username%" There are no .docx files in the "WordToPDF" Folder
+	exit
+)
+
+
+
 mkdir OldDocs
 
 cd OldDocs
